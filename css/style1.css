@@ -1,0 +1,38 @@
+
+.content-container {
+    background-image: url('../static/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0; 
+}
+
+.about-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-section h2 {
+    color: #333;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    color: #666;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.about-section .points-list {
+    text-align: left;
+}
+
+.about-section .points-list li {
+    list-style-type: none;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #888;
+}
