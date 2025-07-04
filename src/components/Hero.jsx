@@ -1,31 +1,66 @@
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
 
+import { styles } from "../styles";
+
+import { useEffect } from "react";
+import AvatarCanvas from "./canvas/AvatarCanvas";
 const Hero = () => {
+useEffect(() => {
+  if (window.anime) {
+    window.anime.timeline()
+      .add({
+        targets: '.ml15 .word',
+        scale: [14, 1],
+        opacity: [0, 1],
+        easing: 'easeOutCirc',
+        duration: 800,
+        delay: (el, i) => 800 * i
+      })
+      .finished
+      .then(() => {
+        const textWrapper = document.querySelector('.ml3');
+        if (textWrapper) {
+          const text = textWrapper.textContent;
+          textWrapper.innerHTML = text.replace(/\S/g, "<span class='letter'>$&</span>");
+          textWrapper.style.opacity = 1; // show container
+
+          window.anime.timeline()
+            .add({
+              targets: '.ml3 .letter',
+              opacity: [0, 1],
+              easing: "easeInOutQuad",
+              duration: 2250,
+              delay: (el, i) => 50 * (i + 1)
+            });
+        }
+      });
+  }
+}, []);
+
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
-        </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
-          </p>
-        </div>
+          <div>
+<h1 className={`ml15 text-white text-[20px] sm:text-[60px] font-bold`}>
+        <span className="word">Hi,</span>{' '}
+        <span className="word">I'm</span>{' '}
+        <span className="word text-[#0f69b7]">Arnav</span>{' '}
+        <span className="word text-[#0f69b7]">Hemdan</span>
+      </h1>
+<p className={`ml3 mt-2 text-white-100 text-[16px] sm:text-[20px]`}>
+  I am a Full Stack Web Developer,<br/>
+  Building interfaces and web applications
+</p>
+
+    </div>
       </div>
 
-      <ComputersCanvas />
+    <AvatarCanvas/>
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
