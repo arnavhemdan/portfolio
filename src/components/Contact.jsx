@@ -128,6 +128,10 @@ const Contact = () => {
 <motion.div
   variants={slideIn("right", "tween", 0.2, 1)}
   className='relative xl:flex-1 xl:h-auto md:h-[550px] h-[450px] overflow-visible'
+  style={{
+    clipPath: "inset(0 0 0 0)", // Add this line
+  }}
+
 >
   <SpaceshipViewer />
 </motion.div>
