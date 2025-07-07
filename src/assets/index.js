@@ -21,7 +21,7 @@ import threejs from "./tech/threejs.webp";
 
 import python from './tech/python.webp'
 import C from './tech/Cpp.webp'
-import Cpp from './tech/Cpp.webp'
+import cpp from './tech/cpp.webp'
 
 export {
   logo,
@@ -44,5 +44,5 @@ export {
   threejs,
   python,
   C,
-  Cpp
+  cpp
 };
