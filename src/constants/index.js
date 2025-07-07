@@ -14,7 +14,7 @@ import {
   figma,
   threejs,
   C,
-  Cpp,
+  cpp,
   creator,
 
 } from "../assets";
@@ -101,7 +101,7 @@ const technologies = [
   },
     {
     name: "C++",
-    icon: Cpp,
+    icon: cpp,
   }
 
 
