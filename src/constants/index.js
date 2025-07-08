@@ -1,5 +1,4 @@
 import {
-  mobile,
   backend,
   web,
   javascript,
@@ -14,7 +13,7 @@ import {
   figma,
   threejs,
   C,
-  cpp,
+  // cpp,
   creator,
 
 } from "../assets";
@@ -98,11 +97,11 @@ const technologies = [
     {
     name: "C",
     icon: C,
-  },
-    {
-    name: "C++",
-    icon: cpp,
   }
+  //   {
+  //   name: "C++",
+  //   icon: cpp,
+  // }
 
 
 
